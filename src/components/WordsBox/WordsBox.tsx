@@ -1,17 +1,29 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { WordsBoxWrapper } from "./WordsBox.styled";
 import generateWordList from "../../services/WordListGenerator";
 import "./WordsBox.css";
+import { WordEntry } from "../../types";
 
-interface WordsBoxProps {}
+interface WordsBoxProps {
+  wordEntries: WordEntry[];
+  setWordEntries: (words: WordEntry[]) => void;
+}
 
-function WordsBox() {
-  let words = generateWordList();
+function WordsBox(wordsBoxProps: WordsBoxProps) {
   return (
     <WordsBoxWrapper>
-      {words.map((word) => (
-        <div className="correctWord" key={word}>
-          {word}
+      {wordsBoxProps.wordEntries?.map((wordEntry) => (
+        <div
+          className={
+            wordEntry.guessed
+              ? wordEntry.guessedCorrectly
+                ? "correctWord"
+                : "wrongWord"
+              : "notGuessed"
+          }
+          key={wordEntry.word}
+        >
+          {wordEntry.word}
         </div>
       ))}
     </WordsBoxWrapper>

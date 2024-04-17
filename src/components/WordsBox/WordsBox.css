@@ -5,3 +5,7 @@
 .wrongWord {
     color: red;
 }
+
+.notGuessed {
+    color: black;
+}
