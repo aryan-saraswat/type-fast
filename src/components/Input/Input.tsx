@@ -8,6 +8,7 @@ interface InputProps {
 }
 
 function Input(inputProps: InputProps) {
+  const [score, setScore] = useState<number>(0);
   const [inputText, setInputText] = useState<string>("");
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -20,7 +21,9 @@ function Input(inputProps: InputProps) {
     }
   }
 
-  function onButtonClick() {}
+  function onButtonClick() {
+    console.log("words from input: ", inputProps.wordEntries);
+  }
 
   function checkEnteredWord(word: string) {
     const indexToCheck = inputProps.wordEntries.findIndex((wordEntry) => {
@@ -37,6 +40,7 @@ function Input(inputProps: InputProps) {
         return wordEntry;
       });
       inputProps.setWordEntries(updatedWordEntries);
+      setScore(score + 1);
     } else if (word !== inputProps.wordEntries[indexToCheck].word) {
       inputProps.wordEntries[indexToCheck] = {
         ...inputProps.wordEntries[indexToCheck],
@@ -44,13 +48,6 @@ function Input(inputProps: InputProps) {
       };
       inputProps.setWordEntries(inputProps.wordEntries);
     }
-
-    inputProps.wordEntries.map((entry) => {
-      console.log("word: ", entry.word);
-      console.log("guessed: ", entry.guessed);
-    });
-    console.log("");
-    console.log("");
   }
 
   return (
@@ -62,7 +59,7 @@ function Input(inputProps: InputProps) {
           onChange={(e) => handleInputChange(e)}
         ></input>
         <button onClick={onButtonClick}>press</button>
-        <p>{inputText}</p>
+        <p>{score}</p>
       </div>
     </InputWrapper>
   );

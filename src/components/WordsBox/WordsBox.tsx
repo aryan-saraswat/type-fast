@@ -14,13 +14,7 @@ function WordsBox(wordsBoxProps: WordsBoxProps) {
     <WordsBoxWrapper>
       {wordsBoxProps.wordEntries?.map((wordEntry) => (
         <div
-          className={
-            wordEntry.guessed
-              ? wordEntry.guessedCorrectly
-                ? "correctWord"
-                : "wrongWord"
-              : "notGuessed"
-          }
+          className={wordEntry.guessedCorrectly ? "correctWord" : "wrongWord"}
           key={wordEntry.word}
         >
           {wordEntry.word}
