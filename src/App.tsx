@@ -4,6 +4,8 @@ import Input from "./components/Input/Input";
 import WordsBox from "./components/WordsBox/WordsBox";
 import generateWordList from "./services/WordListGenerator";
 import { WordEntry } from "./types";
+import { TimekeeperWrapper } from "./components/Timekeeper/Timekeeper.styled";
+import Timekeeper from "./components/Timekeeper/Timekeeper";
 
 function App() {
   const [words, setWords] = useState<WordEntry[]>(generateWordList(5));
@@ -27,6 +29,7 @@ function App() {
         setWordEntries={setWordsFunction}
       ></WordsBox>
       <Input wordEntries={words} setWordEntries={setWordsFunction}></Input>
+      <Timekeeper></Timekeeper>
     </div>
   );
 }
