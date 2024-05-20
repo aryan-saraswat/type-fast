@@ -12,14 +12,17 @@ interface WordsBoxProps {
 function WordsBox(wordsBoxProps: WordsBoxProps) {
   return (
     <WordsBoxWrapper>
-      {wordsBoxProps.wordEntries?.map((wordEntry) => (
-        <div
-          className={wordEntry.guessedCorrectly ? "correctWord" : "wrongWord"}
-          key={wordEntry.word}
-        >
-          {wordEntry.word}
-        </div>
-      ))}
+      <div className="container">
+        {wordsBoxProps.wordEntries?.map((wordEntry) => (
+          <div
+            className="child"
+            style={{ color: wordEntry.guessedCorrectly ? "green" : "red" }}
+            key={wordEntry.word}
+          >
+            {wordEntry.word}
+          </div>
+        ))}
+      </div>
     </WordsBoxWrapper>
   );
 }

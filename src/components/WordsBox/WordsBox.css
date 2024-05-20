@@ -1,11 +1,13 @@
-.correctWord {
-    color: green;
-}
-
-.wrongWord {
-    color: red;
-}
-
 .notGuessed {
     color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+
+.child {
 }
