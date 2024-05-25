@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Input from "./components/Input/Input";
+import Timekeeper from "./components/Timekeeper/Timekeeper";
 import WordsBox from "./components/WordsBox/WordsBox";
 import generateWordList from "./services/WordListGenerator";
 import { WordEntry } from "./types";
-import { TimekeeperWrapper } from "./components/Timekeeper/Timekeeper.styled";
-import Timekeeper from "./components/Timekeeper/Timekeeper";
 
 function App() {
   const [words, setWords] = useState<WordEntry[]>(generateWordList(5));

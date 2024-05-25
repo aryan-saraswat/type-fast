@@ -1,6 +1,5 @@
-import React, { FC, useState } from "react";
+import { useState } from "react";
 import { TimekeeperWrapper } from "./Timekeeper.styled";
-import { log } from "console";
 
 interface TimekeeperProps {}
 

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
-import { InputWrapper } from "./Input.styled";
+import React, { useState } from "react";
 import { WordEntry } from "../../types";
+import { InputWrapper } from "./Input.styled";
 
 interface InputProps {
   wordEntries: WordEntry[];

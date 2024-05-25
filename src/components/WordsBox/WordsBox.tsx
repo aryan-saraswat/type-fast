@@ -1,8 +1,6 @@
-import React, { FC, useContext } from "react";
-import { WordsBoxWrapper } from "./WordsBox.styled";
-import generateWordList from "../../services/WordListGenerator";
-import "./WordsBox.css";
 import { WordEntry } from "../../types";
+import "./WordsBox.css";
+import { WordsBoxWrapper } from "./WordsBox.styled";
 
 interface WordsBoxProps {
   wordEntries: WordEntry[];
